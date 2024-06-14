@@ -1,0 +1,15 @@
+apiVersion: everest.percona.com/v1alpha1
+kind: MonitoringConfig
+metadata:
+  name: pmm
+  namespace: everest-monitoring
+spec:
+  allowedNamespaces:
+  - my-special-place
+  credentialsSecretName: pmm
+  pmm:
+    image: ""
+    url: http://monitoring-service.default
+  type: pmm
+  verifyTLS: false
+---
