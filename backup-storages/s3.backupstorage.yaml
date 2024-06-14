@@ -5,7 +5,7 @@ metadata:
   namespace: everest-system
 spec:
   allowedNamespaces:
-  - n1
+  - my-special-place
   bucket: mayank-everest-test
   credentialsSecretName: s3
   description: s3
