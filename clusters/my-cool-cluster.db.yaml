@@ -2,7 +2,7 @@ apiVersion: everest.percona.com/v1alpha1
 kind: DatabaseCluster
 metadata:
   name: my-cool-cluster
-  namespace: n1
+  namespace: my-special-place
 spec:
   allowUnsafeConfiguration: true
   backup:
