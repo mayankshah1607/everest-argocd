@@ -14,3 +14,21 @@ spec:
       creationTimestamp: null
       name: s3
       namespace: everest-system
+---
+apiVersion: everest.percona.com/v1alpha1
+kind: BackupStorage
+metadata:
+  name: s3
+  namespace: everest-system
+spec:
+  allowedNamespaces:
+  - dev
+  bucket: mayank-everest-test
+  credentialsSecretName: s3
+  description: s3
+  endpointURL: https://s3.us-west-2.amazonaws.com
+  forcePathStyle: false
+  region: us-west-2
+  type: s3
+  verifyTLS: true
+---
