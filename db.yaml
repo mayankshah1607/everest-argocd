@@ -1,0 +1,28 @@
+apiVersion: everest.percona.com/v1alpha1
+kind: DatabaseCluster
+metadata:
+  name: mysql-cluster-1
+  namespace: everest
+spec:
+  allowUnsafeConfiguration: true
+  backup:
+    enabled: false
+    pitr:
+      enabled: false
+  engine:
+    replicas: 1
+    resources:
+      cpu: "1"
+      memory: 2G
+    storage:
+      size: 25Gi
+    type: pxc
+    version: 8.0.36-28.1
+  proxy:
+    expose:
+      type: internal
+    replicas: 1
+    resources:
+      cpu: "0"
+      memory: "0"
+    type: haproxy

@@ -1,17 +1,9 @@
 apiVersion: everest.percona.com/v1alpha1
 kind: DatabaseCluster
 metadata:
-  name: mysql-cluster-1
-  namespace: dev
+  name: mysql-1
+  namespace: everest
 spec:
-  allowUnsafeConfiguration: true
-  backup:
-    enabled: true
-    schedules:
-    - backupStorageName: s3
-      enabled: true
-      name: backup-schedule-1
-      schedule: 30 * * * *
   engine:
     replicas: 1
     resources:
@@ -23,8 +15,6 @@ spec:
     type: pxc
     userSecretsName: everest-secrets-mysql
     version: 8.0.32-24.2
-  monitoring:
-    monitoringConfigName: pmm
   proxy:
     expose:
       type: internal
